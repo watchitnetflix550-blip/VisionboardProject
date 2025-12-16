@@ -1,0 +1,138 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADF-b8-dev-0002"
+		},
+		"LS_AZURESQL_DB_password": {
+			"value": ""
+		},
+		"LS_AZURESQL_SRCDB_password": {
+			"value": ""
+		},
+		"LS_BULK_accountKey": {
+			"value": ""
+		},
+		"LS_BULK_Sink_accountKey": {
+			"value": ""
+		},
+		"LS_CSV_accountKey": {
+			"value": ""
+		},
+		"LS_CSV_Sink_accountKey": {
+			"value": ""
+		},
+		"LS_EXCEL_accountKey": {
+			"value": ""
+		},
+		"LS_EXCEL_Sink_accountKey": {
+			"value": ""
+		},
+		"LS_JSON_accountKey": {
+			"value": ""
+		},
+		"LS_JSON_Sink_accountKey": {
+			"value": ""
+		},
+		"LS_REST_Sink_accountKey": {
+			"value": ""
+		},
+		"LS_SFTP_Sink_accountKey": {
+			"value": ""
+		},
+		"LS_SNOWFLAKE_password": {
+			"value": ""
+		},
+		"LS_SQL_password": {
+			"value": ""
+		},
+		"LS_SQL_Sink_accountKey": {
+			"value": ""
+		},
+		"LS_AZURESQL_DB_properties_typeProperties_server": {
+			"value": "sql-srvr-vb-dev1.database.windows.net"
+		},
+		"LS_AZURESQL_DB_properties_typeProperties_database": {
+			"value": "sql-db-vb-dev"
+		},
+		"LS_AZURESQL_DB_properties_typeProperties_userName": {
+			"value": "visionboard"
+		},
+		"LS_AZURESQL_SRCDB_properties_typeProperties_server": {
+			"value": "sql-srvr-vb-dev1.database.windows.net"
+		},
+		"LS_AZURESQL_SRCDB_properties_typeProperties_database": {
+			"value": "sql-db-vb-dev"
+		},
+		"LS_AZURESQL_SRCDB_properties_typeProperties_userName": {
+			"value": "visionboard"
+		},
+		"LS_BULK_properties_typeProperties_url": {
+			"value": "https://adlsdevisionboardraw02.dfs.core.windows.net/"
+		},
+		"LS_BULK_Sink_properties_typeProperties_url": {
+			"value": "https://adlsdevvbsorce002.dfs.core.windows.net/"
+		},
+		"LS_CSV_properties_typeProperties_url": {
+			"value": "https://adlsdevisionboardraw02.dfs.core.windows.net/"
+		},
+		"LS_CSV_Sink_properties_typeProperties_url": {
+			"value": "https://adlsdevvbsorce002.dfs.core.windows.net/"
+		},
+		"LS_EXCEL_properties_typeProperties_url": {
+			"value": "https://adlsdevisionboardraw02.dfs.core.windows.net/"
+		},
+		"LS_EXCEL_Sink_properties_typeProperties_url": {
+			"value": "https://adlsdevvbsorce002.dfs.core.windows.net/"
+		},
+		"LS_JSON_properties_typeProperties_url": {
+			"value": "https://adlsdevisionboardraw02.dfs.core.windows.net/"
+		},
+		"LS_JSON_Sink_properties_typeProperties_url": {
+			"value": "https://adlsdevvbsorce002.dfs.core.windows.net/"
+		},
+		"LS_KeyVault_properties_typeProperties_baseUrl": {
+			"value": "https://sftpvault3.vault.azure.net/"
+		},
+		"LS_REST_properties_typeProperties_url": {
+			"value": "https://retoolapi.dev/RGj2sc/product_category_name_translation"
+		},
+		"LS_REST_Sink_properties_typeProperties_url": {
+			"value": "https://adlsdevvbsorce002.dfs.core.windows.net/"
+		},
+		"LS_SFTP_properties_typeProperties_host": {
+			"value": "adlsdevisionboardraw02.blob.core.windows.net"
+		},
+		"LS_SFTP_properties_typeProperties_userName": {
+			"value": "adlsdevisionboardraw02.sftp"
+		},
+		"LS_SFTP_Sink_properties_typeProperties_url": {
+			"value": "https://adlsdevvbsorce002.dfs.core.windows.net/"
+		},
+		"LS_SNOWFLAKE_properties_typeProperties_database": {
+			"value": "DBAZURESNOW"
+		},
+		"LS_SNOWFLAKE_Sink_sasUri": {
+			"value": ""
+		},
+		"LS_SQL_properties_typeProperties_server": {
+			"value": "LAPTOP-Q5BMG2OF\\SQLEXPRESS"
+		},
+		"LS_SQL_properties_typeProperties_database": {
+			"value": "vbadeproject"
+		},
+		"LS_SQL_properties_typeProperties_userName": {
+			"value": "vbproject"
+		},
+		"LS_SQL_Sink_properties_typeProperties_url": {
+			"value": "https://adlsdevvbsorce002.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
