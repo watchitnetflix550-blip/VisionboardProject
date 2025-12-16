@@ -1,0 +1,44 @@
+{
+	"name": "DS_EXCEL_PQT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_EXCEL",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "olist_order_reviews_dataset.xlsx",
+				"folderPath": "EXCEL",
+				"fileSystem": "input"
+			},
+			"sheetIndex": 0
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

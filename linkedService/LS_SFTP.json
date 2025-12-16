@@ -1,0 +1,23 @@
+{
+	"name": "LS_SFTP",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "Sftp",
+		"typeProperties": {
+			"host": "adlsdevisionboardraw02.blob.core.windows.net",
+			"port": 22,
+			"skipHostKeyValidation": true,
+			"authenticationType": "Basic",
+			"userName": "adlsdevisionboardraw02.sftp",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LS_KeyVault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "sftp-pwd"
+			}
+		}
+	}
+}

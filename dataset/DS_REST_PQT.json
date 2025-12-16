@@ -1,0 +1,13 @@
+{
+	"name": "DS_REST_PQT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_REST",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

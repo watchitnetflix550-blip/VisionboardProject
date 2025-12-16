@@ -1,0 +1,45 @@
+{
+	"name": "sink_EXCEL_PQT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_EXCEL_Sink",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@concat(\n  'EXCEL/' ,\n   formatDateTime(utcNow(),'yyyy'), '/',\n   formatDateTime(utcNow(),'MM'),'/',\n   formatDateTime(utcNow(),'dd')\n)",
+					"type": "Expression"
+				},
+				"fileSystem": "sinkinput"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "order_id",
+				"type": "UTF8"
+			},
+			{
+				"name": "payment_sequential",
+				"type": "UTF8"
+			},
+			{
+				"name": "payment_type",
+				"type": "UTF8"
+			},
+			{
+				"name": "payment_installments",
+				"type": "UTF8"
+			},
+			{
+				"name": "payment_value",
+				"type": "UTF8"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

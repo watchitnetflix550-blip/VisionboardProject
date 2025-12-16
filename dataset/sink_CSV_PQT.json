@@ -1,0 +1,24 @@
+{
+	"name": "sink_CSV_PQT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_CSV_Sink",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@concat(\n    'CSV/' ,\n    formatDateTime(utcNow(),'yyyy'), '/',\n    formatDateTime(utcNow(),'MM'),'/',\n    formatDateTime(utcNow(),'dd')\n)",
+					"type": "Expression"
+				},
+				"fileSystem": "sinkinput"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

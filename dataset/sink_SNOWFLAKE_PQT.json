@@ -1,0 +1,24 @@
+{
+	"name": "sink_SNOWFLAKE_PQT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SNOWFLAKE_Sink",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": {
+					"value": "@concat(\n  'SNOWFLAKE/' ,\n   formatDateTime(utcNow(),'yyyy'), '/',\n   formatDateTime(utcNow(),'MM'),'/',\n   formatDateTime(utcNow(),'dd')\n)\n \n",
+					"type": "Expression"
+				},
+				"container": "blobinput"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
