@@ -52,7 +52,7 @@
 							"value": "Azure",
 							"activities": [
 								{
-									"name": "Exec_PL_SWITCH_CSV_EXCEL",
+									"name": "Exec_COPY_CSV",
 									"type": "ExecutePipeline",
 									"dependsOn": [],
 									"policy": {
@@ -61,7 +61,7 @@
 									"userProperties": [],
 									"typeProperties": {
 										"pipeline": {
-											"referenceName": "PL4_SWITCH_CSV_EXCEL",
+											"referenceName": "COPY_CSV",
 											"type": "PipelineReference"
 										},
 										"waitOnCompletion": true,
