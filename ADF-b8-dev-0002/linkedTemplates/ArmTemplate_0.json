@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ADF-b8-dev-0002"
 		},
+		"LS_AZURESQL_CSV_EXCEL_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZURESQL_CSV_EXCEL'"
+		},
 		"LS_AZURESQL_DB_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZURESQL_DB'"
@@ -62,6 +66,18 @@
 		"LS_SQL_Sink_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SQL_Sink'"
+		},
+		"LS_AZURESQL_CSV_EXCEL_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sql-srvr-vb-dev1.database.windows.net"
+		},
+		"LS_AZURESQL_CSV_EXCEL_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sql-db-vb-dev"
+		},
+		"LS_AZURESQL_CSV_EXCEL_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "visionboard"
 		},
 		"LS_AZURESQL_DB_properties_typeProperties_server": {
 			"type": "string",
@@ -152,6 +168,28 @@
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_AZURESQL_CSV_EXCEL')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('LS_AZURESQL_CSV_EXCEL_properties_typeProperties_server')]",
+					"database": "[parameters('LS_AZURESQL_CSV_EXCEL_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_AZURESQL_CSV_EXCEL_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_AZURESQL_CSV_EXCEL_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/LS_AZURESQL_DB')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
@@ -458,12 +496,12 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DS_AZURESQL_DB')]",
+			"name": "[concat(parameters('factoryName'), '/DS_AZURESQL_CSV_EXCEL')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "LS_AZURESQL_DB",
+					"referenceName": "LS_AZURESQL_CSV_EXCEL",
 					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
@@ -472,25 +510,7 @@
 				"typeProperties": {}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_AZURESQL_DB')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DS_AZURESQL_SRCDB')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_AZURESQL_SRCDB",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_AZURESQL_SRCDB')]"
+				"[concat(variables('factoryId'), '/linkedServices/LS_AZURESQL_CSV_EXCEL')]"
 			]
 		}
 	]

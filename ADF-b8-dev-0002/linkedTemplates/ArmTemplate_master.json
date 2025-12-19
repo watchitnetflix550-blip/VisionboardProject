@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ADF-b8-dev-0002"
 		},
+		"LS_AZURESQL_CSV_EXCEL_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZURESQL_CSV_EXCEL'"
+		},
 		"LS_AZURESQL_DB_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZURESQL_DB'"
@@ -66,6 +70,18 @@
 		"LS_SQL_Sink_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SQL_Sink'"
+		},
+		"LS_AZURESQL_CSV_EXCEL_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sql-srvr-vb-dev1.database.windows.net"
+		},
+		"LS_AZURESQL_CSV_EXCEL_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sql-db-vb-dev"
+		},
+		"LS_AZURESQL_CSV_EXCEL_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "visionboard"
 		},
 		"LS_AZURESQL_DB_properties_typeProperties_server": {
 			"type": "string",
@@ -198,6 +214,9 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"LS_AZURESQL_CSV_EXCEL_password": {
+						"value": "[parameters('LS_AZURESQL_CSV_EXCEL_password')]"
+					},
 					"LS_AZURESQL_DB_password": {
 						"value": "[parameters('LS_AZURESQL_DB_password')]"
 					},
@@ -239,6 +258,15 @@
 					},
 					"LS_SQL_Sink_accountKey": {
 						"value": "[parameters('LS_SQL_Sink_accountKey')]"
+					},
+					"LS_AZURESQL_CSV_EXCEL_properties_typeProperties_server": {
+						"value": "[parameters('LS_AZURESQL_CSV_EXCEL_properties_typeProperties_server')]"
+					},
+					"LS_AZURESQL_CSV_EXCEL_properties_typeProperties_database": {
+						"value": "[parameters('LS_AZURESQL_CSV_EXCEL_properties_typeProperties_database')]"
+					},
+					"LS_AZURESQL_CSV_EXCEL_properties_typeProperties_userName": {
+						"value": "[parameters('LS_AZURESQL_CSV_EXCEL_properties_typeProperties_userName')]"
 					},
 					"LS_AZURESQL_DB_properties_typeProperties_server": {
 						"value": "[parameters('LS_AZURESQL_DB_properties_typeProperties_server')]"

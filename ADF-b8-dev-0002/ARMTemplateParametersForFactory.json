@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "ADF-b8-dev-0002"
 		},
+		"LS_AZURESQL_CSV_EXCEL_password": {
+			"value": ""
+		},
 		"LS_AZURESQL_DB_password": {
 			"value": ""
 		},
@@ -49,6 +52,15 @@
 		},
 		"LS_SQL_Sink_accountKey": {
 			"value": ""
+		},
+		"LS_AZURESQL_CSV_EXCEL_properties_typeProperties_server": {
+			"value": "sql-srvr-vb-dev1.database.windows.net"
+		},
+		"LS_AZURESQL_CSV_EXCEL_properties_typeProperties_database": {
+			"value": "sql-db-vb-dev"
+		},
+		"LS_AZURESQL_CSV_EXCEL_properties_typeProperties_userName": {
+			"value": "visionboard"
 		},
 		"LS_AZURESQL_DB_properties_typeProperties_server": {
 			"value": "sql-srvr-vb-dev1.database.windows.net"
