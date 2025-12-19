@@ -60,6 +60,16 @@
 				]
 			}
 		],
+		"parameters": {
+			"Trigger": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"Mapping": {
+				"type": "String"
+			}
+		},
 		"annotations": [],
 		"lastPublishTime": "2025-12-01T07:49:43Z"
 	},
