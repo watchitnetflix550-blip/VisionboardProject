@@ -77,6 +77,16 @@
 				"policy": {
 					"elapsedTimeMetric": {}
 				},
+				"parameters": {
+					"Trigger": {
+						"type": "string"
+					}
+				},
+				"variables": {
+					"Mapping": {
+						"type": "String"
+					}
+				},
 				"annotations": [],
 				"lastPublishTime": "2025-12-01T08:29:09Z"
 			},
@@ -604,12 +614,25 @@
 									"value": "EXCEL",
 									"activities": [
 										{
-											"name": "Wait1",
-											"type": "Wait",
+											"name": "Exec_COPY_EXCEL",
+											"type": "ExecutePipeline",
 											"dependsOn": [],
+											"policy": {
+												"secureInput": false
+											},
 											"userProperties": [],
 											"typeProperties": {
-												"waitTimeInSeconds": 1
+												"pipeline": {
+													"referenceName": "COPY_EXCEL",
+													"type": "PipelineReference"
+												},
+												"waitOnCompletion": true,
+												"parameters": {
+													"Trigger": {
+														"value": "@pipeline().parameters.Trigger",
+														"type": "Expression"
+													}
+												}
 											}
 										}
 									]
@@ -633,7 +656,9 @@
 				},
 				"annotations": []
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/COPY_EXCEL')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PL3_CLOUDSG_CSV_EXCEL')]",
